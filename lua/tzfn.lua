@@ -26,12 +26,10 @@ local function set_highlights()
 			highlights[k] = v
 		end
 	end
+
 	local transparency_highlights = {
 		Normal = { fg = palette.fg, bg = "NONE" },
 		NormalNC = { fg = palette.fg, bg = styles.dim_inactive and palette._nc or "NONE" },
-		FoldColumn = { bg = "NONE" },
-		SignColumn = { fg = palette.fg, bg = "NONE" },
-		TabLineFill = { bg = "NONE" },
 	}
 
 	if styles.transparency then
@@ -93,22 +91,22 @@ local function set_highlights()
 
 	--- Terminal
 	if config.options.enable.terminal then
-		vim.g.terminal_color_0 = palette.overlay -- black
-		vim.g.terminal_color_8 = palette.subtle -- bright black
+		vim.g.terminal_color_0 = palette.bg -- black
+		vim.g.terminal_color_8 = palette.bg_bright -- bright black
 		vim.g.terminal_color_1 = palette.red -- red
-		vim.g.terminal_color_9 = palette.red -- bright red
+		vim.g.terminal_color_9 = palette.red2 -- bright red
 		vim.g.terminal_color_2 = palette.grn -- green
-		vim.g.terminal_color_10 = palette.grn -- bright green
+		vim.g.terminal_color_10 = palette.grn2 -- bright green
 		vim.g.terminal_color_3 = palette.ylw -- yellow
-		vim.g.terminal_color_11 = palette.ylw -- bright yellow
+		vim.g.terminal_color_11 = palette.ylw2 -- bright yellow
 		vim.g.terminal_color_4 = palette.blu -- blue
-		vim.g.terminal_color_12 = palette.blu -- bright blue
-		vim.g.terminal_color_5 = palette.blu2 -- magenta
-		vim.g.terminal_color_13 = palette.blu2 -- bright magenta
+		vim.g.terminal_color_12 = palette.blu2 -- bright blue
+		vim.g.terminal_color_5 = palette.ylw2 -- magenta
+		vim.g.terminal_color_13 = palette.ylw2 -- bright magenta
 		vim.g.terminal_color_6 = palette.mgt -- cyan
-		vim.g.terminal_color_14 = palette.mgt -- bright cyan
+		vim.g.terminal_color_14 = palette.mgt2 -- bright cyan
 		vim.g.terminal_color_7 = palette.fg -- white
-		vim.g.terminal_color_15 = palette.fg -- bright white
+		vim.g.terminal_color_15 = "#ffffff" -- bright white
 
 		-- Support StatusLineTerm & StatusLineTermNC from vim
 		vim.cmd([[

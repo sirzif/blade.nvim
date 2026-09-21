@@ -1,51 +1,52 @@
 local options = require("tzfn.config").options
-local variants = {
-	main = {
-		_nc = "#121414",
-		bg = "#17191a",
-		surface = "#202527",
-		overlay = "#2a3236",
+local palette = {
+	_nc = "#000a11",
+	bg = "#001018",
+	bg_bright = "#516771",
+	surface = "#0c2129",
+	overlay = "#1c313a",
 
-		fg = "#d6d9e0",
-		muted = "#686c6e",
-		subtle = "#969399",
+	fg = "#d7e0e3",
+	subtle = "#959da0",
+	muted = "#555c5f",
 
-		red = "#d94a22",
-		grn = "#2f8c57",
-		ylw = "#e5a21b",
-		blu = "#558ba6",
-		mgt = "#b02f67",
-		cyn = "#1da89d",
+	-- ~aa
+	red = "#c35d5b",
+	grn = "#558763",
+	ylw = "#f78b04",
+	blu = "#14889b",
+	mgt = "#cf489e",
+	cyn = "#658191",
+	vio = "#886fbf",
 
-		red2 = "#fa835c",
-		grn2 = "#58c987",
-		ylw2 = "#f4b83f",
-		blu2 = "#79b9d9",
-		mgt2 = "#e04d8f",
-		cyn2 = "#30dbcd",
+	-- ~aaa
+	red2 = "#d48a89",
+	grn2 = "#97c8a5",
+	ylw2 = "#fcaa45",
+	blu2 = "#58abb8",
+	mgt2 = "#dd7fbb",
+	cyn2 = "#8ca1ad",
+	vio2 = "#a794d0",
 
-		red3 = "#301006",
-		grn3 = "#16301c",
-		ylw3 = "#302306",
-		blu3 = "#182932",
+	-- original
+	red3 = "#a30502",
+	grn3 = "#3e774e",
+	grn3_1 = "#88b783",
+	-- ylw3 = "#f78b04",
+	blu3 = "#027f93",
+	mgt3 = "#c5238a",
+	cyn3 = "#406074",
+	vio3 = "#5531a4",
 
-		err = "#d93b55",
+	hl1 = "#071c25",
+	hl2 = "#1b3039",
+	hl3 = "#394f59",
 
-		hl1 = "#1f2224",
-		hl2 = "#293033",
-		hl3 = "#39464d",
-
-		none = "NONE",
-	},
+	none = "NONE",
 }
 
-if options.palette ~= nil and next(options.palette) then
-	-- handle variant specific overrides
-	for variant_name, override_palette in pairs(options.palette) do
-		if variants[variant_name] then
-			variants[variant_name] = vim.tbl_extend("force", variants[variant_name], override_palette or {})
-		end
-	end
+if options.palette and next(options.palette) then
+	palette = vim.tbl_extend("force", palette, options.palette)
 end
 
-return variants.main
+return palette

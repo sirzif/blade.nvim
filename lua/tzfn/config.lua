@@ -1,5 +1,5 @@
----@alias Palette { bg: string, surface: string, overlay: string, muted: string, subtle: string, fg: string, red: string, ylw: string, mgt: string, grn: string, blu: string, blu_b: string, grn_b: string}
----@alias PaletteColor "bg" | "surface" | "overlay" | "muted" | "subtle" | "fg" | "red" | "ylw" | "mgt" | "grn" | "blu" | "blu_b" | "grn_b" | "hl_low" | "hl_med" | "hl_high"
+---@alias Palette { bg: string, surface: string, overlay: string, muted: string, subtle: string, fg: string, red: string, grn: string, ylw: string, blu: string, mgt: string, cyn: string, vio: string, b_red: string, b_grn: string, b_ylw: string, b_blu: string, b_mgt: string, b_cyn: string, d_red: string, d_grn: string, d_ylw: string, d_blu: string, d_vio: string, hl1: string, hl2: string, hl3: string}
+---@alias PaletteColor "bg" | "surface" | "overlay" | "muted" | "subtle" | "fg" | "red" | "grn" | "ylw" | "blu" | "mgt" | "cyn" | "vio" | "b_red" | "b_grn" | "b_ylw" | "b_blu" | "b_mgt" | "b_cyn" | "d_red" | "d_grn" | "d_ylw" | "d_blu" | "d_vio" | "hl1" | "hl2" | "hl3" | "_nc" | "none"
 ---@alias Highlight { link: string, inherit: boolean } | { fg: string, bg: string, sp: string, bold: boolean, italic: boolean, undercurl: boolean, underline: boolean, underdouble: boolean, underdotted: boolean, underdashed: boolean, strikethrough: boolean, inherit: boolean }
 
 local config = {}

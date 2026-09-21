@@ -1,6 +1,6 @@
-return function(palette, styles)
+return function(c, _)
 	return {
-		TreesitterContext = { bg = palette.overlay },
-		TreesitterContextLineNumber = { fg = palette.mgt, bg = palette.overlay },
+		TreesitterContext = { bg = c.overlay },
+		TreesitterContextLineNumber = { fg = c.blu2, bg = c.overlay },
 	}
 end

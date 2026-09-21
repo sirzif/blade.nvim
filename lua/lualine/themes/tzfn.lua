@@ -8,18 +8,18 @@ end
 
 return {
 	normal = {
-		a = { bg = p.mgt, fg = p.bg, gui = "bold" },
-		b = { bg = p.overlay, fg = p.mgt },
-		c = { bg = bg_base, fg = p.fg },
-	},
-	insert = {
 		a = { bg = p.blu, fg = p.bg, gui = "bold" },
 		b = { bg = p.overlay, fg = p.blu },
 		c = { bg = bg_base, fg = p.fg },
 	},
+	insert = {
+		a = { bg = p.mgt, fg = p.bg, gui = "bold" },
+		b = { bg = p.overlay, fg = p.mgt },
+		c = { bg = bg_base, fg = p.fg },
+	},
 	visual = {
-		a = { bg = p.blu2, fg = p.bg, gui = "bold" },
-		b = { bg = p.overlay, fg = p.blu2 },
+		a = { bg = p.vio, fg = p.bg, gui = "bold" },
+		b = { bg = p.overlay, fg = p.vio },
 		c = { bg = bg_base, fg = p.fg },
 	},
 	replace = {

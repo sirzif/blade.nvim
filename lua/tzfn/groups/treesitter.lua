@@ -1,19 +1,17 @@
-local util = require("tzfn.util")
-
-return function(palette, styles)
+return function(c, s)
 	return {
 		["@variable"] = { link = "Identifier" },
-		["@variable.builtin"] = { fg = util.blend(palette.mgt2, palette.mgt, 0.3) },
-		["@variable.parameter"] = { link = "Identifier" },
-		["@variable.parameter.builtin"] = { fg = util.blend(palette.mgt2, palette.mgt, 0.3) },
-		["@variable.member"] = { fg = palette.fg },
+		["@variable.builtin"] = { fg = c.mgt3 },
+		["@variable.parameter"] = { fg = c.fg, italic = s.italic },
+		["@variable.parameter.builtin"] = { fg = c.mgt3 },
+		["@variable.member"] = { fg = c.fg },
 
 		["@constant"] = { link = "Constant" },
-		["@constant.builtin"] = { fg = util.blend(palette.mgt2, util.blend(palette.mgt2, palette.mgt, 0.3), 0.3) },
-		["@constant.macro"] = { fg = palette.mgt2 },
+		["@constant.builtin"] = { fg = c.mgt3 },
+		["@constant.macro"] = { fg = c.mgt },
 
-		["@module"] = { fg = palette.mgt2 },
-		["@module.builtin"] = { fg = palette.mgt2 },
+		["@module"] = { fg = c.mgt },
+		["@module.builtin"] = { fg = c.mgt3 },
 		["@label"] = { link = "Label" },
 
 		["@string"] = { link = "String" },
@@ -23,11 +21,11 @@ return function(palette, styles)
 		["@string.special"] = { link = "@constant" },
 		["@string.special.symbol"] = { link = "@constant" },
 		["@string.special.path"] = { link = "@constant" },
-		["@string.special.url"] = { fg = palette.fg, underline = true },
-		["@string.special.url.comment"] = { fg = palette.muted, underline = true },
+		["@string.special.url"] = { fg = c.fg, underline = true },
+		["@string.special.url.comment"] = { fg = c.muted, underline = true },
 
 		["@character"] = { link = "Character" },
-		["@character.special"] = { fg = util.blend(palette.red2, palette.red, 0.3) },
+		["@character.special"] = { fg = c.ylw },
 
 		["@boolean"] = { link = "Boolean" },
 		["@number"] = { link = "Number" },
@@ -35,33 +33,33 @@ return function(palette, styles)
 		["@float"] = { link = "Float" },
 
 		["@type"] = { link = "Type" },
-		["@type.builtin"] = { fg = util.blend(palette.mgt2, palette.mgt, 0.3) },
+		["@type.builtin"] = { link = "Type" },
 		["@type.definition"] = { link = "Type" },
 
-		["@attribute"] = { fg = util.blend(palette.red2, palette.red, 0.3) },
-		["@attribute.builtin"] = { fg = util.blend(palette.mgt2, palette.mgt, 0.3) },
-		["@property"] = { fg = palette.fg },
+		["@attribute"] = { fg = c.mgt2 },
+		["@attribute.builtin"] = { fg = c.mgt3 },
+		["@property"] = { fg = c.fg },
 
 		["@function"] = { link = "Function" },
-		["@function.builtin"] = { fg = palette.cyn },
-		["@function.call"] = { fg = palette.cyn2 },
-		["@function.macro"] = { fg = util.blend(palette.mgt2, palette.mgt, 0.3) },
+		["@function.builtin"] = { link = "Function" },
+		["@function.call"] = { link = "Function" },
+		["@function.macro"] = { fg = c.mgt },
 
 		["@function.method"] = { link = "Function" },
-		["@function.method.call"] = { fg = palette.cyn2 },
+		["@function.method.call"] = { link = "Function" },
 
-		["@constructor"] = { fg = palette.cyn },
+		["@constructor"] = { fg = c.vio },
 		["@operator"] = { link = "Operator" },
 
 		["@keyword"] = { link = "Keyword" },
-		["@keyword.function"] = { fg = palette.blu },
-		["@keyword.coroutine"] = { fg = palette.blu, italic = styles.italic },
+		["@keyword.function"] = { link = "Keyword" },
+		["@keyword.coroutine"] = { link = "Keyword" },
 		["@keyword.operator"] = { link = "Operator" },
 		["@keyword.import"] = { link = "Include" },
-		["@keyword.type"] = { fg = palette.blu, italic = styles.italic },
-		["@keyword.modifier"] = { fg = palette.blu, italic = styles.italic },
+		["@keyword.type"] = { link = "Keyword" },
+		["@keyword.modifier"] = { link = "Keyword" },
 		["@keyword.repeat"] = { link = "Repeat" },
-		["@keyword.return"] = { fg = palette.blu, italic = styles.italic },
+		["@keyword.return"] = { link = "Keyword" },
 		["@keyword.debug"] = { link = "Debug" },
 		["@keyword.exception"] = { link = "Exception" },
 
@@ -80,12 +78,10 @@ return function(palette, styles)
 		["@comment"] = { link = "Comment" },
 		["@comment.documentation"] = { link = "Comment" },
 
-		["@comment.error"] = { fg = palette.err },
-		["@comment.warning"] = { fg = palette.ylw },
-		["@comment.todo"] = { fg = palette.grn, bg = palette.grn, blend = 15 },
-		["@comment.hint"] = { fg = palette.cyn, bg = palette.cyn, blend = 15 },
-		["@comment.info"] = { fg = palette.blu, bg = palette.blu, blend = 15 },
-		["@comment.note"] = { fg = palette.blu, bg = palette.blu, blend = 15 },
+		["@comment.error"] = { fg = c.red2 },
+		["@comment.warning"] = { fg = c.ylw },
+		["@comment.todo"] = { fg = c.grn2, bg = c.grn, blend = 15 },
+		["@comment.note"] = { fg = c.blu2, bg = c.blu, blend = 15 },
 
 		--- Markup
 		["@markup.strong"] = { bold = true },
@@ -93,45 +89,45 @@ return function(palette, styles)
 		["@markup.strikethrough"] = { strikethrough = true },
 		["@markup.underline"] = { underline = true },
 
-		["@markup.quote"] = { fg = palette.fg },
-		["@markup.math"] = { fg = palette.blu2 },
+		["@markup.quote"] = { fg = c.fg },
+		["@markup.math"] = { fg = c.blu2 },
 		["@markup.environment"] = { link = "Macro" },
 		["@markup.environment.name"] = { link = "@type" },
 
-		["@markup.link"] = { fg = palette.fg, underline = true },
-		["@markup.link.markdown_inline"] = { fg = palette.fg, underline = false },
-		["@markup.link.label"] = { fg = palette.grn2 },
-		["@markup.link.url"] = { fg = palette.blu2, underline = true },
+		["@markup.link"] = { fg = c.fg, underline = true },
+		["@markup.link.markdown_inline"] = { fg = c.fg, underline = false },
+		["@markup.link.label"] = { fg = c.grn2 },
+		["@markup.link.url"] = { fg = c.blu2, underline = true },
 
-		["@markup.raw"] = { fg = palette.ylw },
-		["@markup.raw.block"] = { fg = palette.fg },
+		["@markup.raw"] = { fg = c.ylw },
+		["@markup.raw.block"] = { fg = c.fg },
 
-		["@markup.list"] = { fg = palette.subtle },
-		["@markup.list.checked"] = { fg = palette.grn, bg = palette.grn3, blend = 10 },
-		["@markup.list.unchecked"] = { fg = palette.subtle },
+		["@markup.list"] = { fg = c.subtle },
+		["@markup.list.checked"] = { fg = c.grn, bg = c.d_grn, blend = 10 },
+		["@markup.list.unchecked"] = { fg = c.subtle },
 
 		-- Markdown headings
 
-		["@markup.heading"] = { link = "Title" },
-		["@markup.heading.1"] = { fg = palette.red, bold = true },
-		["@markup.heading.2"] = { fg = palette.mgt, bold = true },
-		["@markup.heading.3"] = { fg = palette.cyn, bold = true },
-		["@markup.heading.4"] = { fg = palette.cyn2, bold = true },
-		["@markup.heading.5"] = { fg = palette.blu, bold = true },
-		["@markup.heading.6"] = { fg = palette.blu2, bold = true },
+		["@markup.heading"] = { fg = c.fg },
+		["@markup.heading.1"] = { fg = c.ylw, bold = true },
+		["@markup.heading.2"] = { fg = c.blu2, bold = true },
+		["@markup.heading.3"] = { fg = c.blu, bold = true },
+		["@markup.heading.4"] = { fg = c.vio2, bold = true },
+		["@markup.heading.5"] = { fg = c.mgt2, bold = true },
+		["@markup.heading.6"] = { fg = c.grn2, bold = true },
 
-		["@diff.plus"] = { fg = palette.grn, bg = palette.grn, blend = 20 },
-		["@diff.minus"] = { fg = palette.red, bg = palette.red, blend = 20 },
-		["@diff.delta"] = { fg = palette.ylw, bg = palette.ylw, blend = 20 },
+		["@diff.plus"] = { fg = c.grn, bg = c.grn, blend = 20 },
+		["@diff.minus"] = { fg = c.red, bg = c.red, blend = 20 },
+		["@diff.delta"] = { fg = c.ylw, bg = c.ylw, blend = 20 },
 
 		["@tag"] = { link = "Tag" },
-		["@tag.attribute"] = { fg = palette.subtle },
-		["@tag.delimiter"] = { fg = palette.fg },
+		["@tag.attribute"] = { fg = c.subtle },
+		["@tag.delimiter"] = { fg = c.fg },
 
 		--- Non-highlighting captures
 		-- ["@none"] = {},
 		["@conceal"] = { link = "Conceal" },
-		["@conceal.markdown"] = { fg = palette.subtle },
+		["@conceal.markdown"] = { fg = c.subtle },
 
 		-- ["@spell"] = {},
 		-- ["@nospell"] = {},

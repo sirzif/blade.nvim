@@ -1,4 +1,4 @@
-return function(palette, styles)
+return function(c, _)
 	return {
 		-- ya idk. maybe later
 		["@lsp.type.boolean"] = { link = "@boolean" },
@@ -11,7 +11,7 @@ return function(palette, styles)
 		["@lsp.type.escapeSequence"] = { link = "@string.escape" },
 		["@lsp.type.formatSpecifier"] = { link = "@markup.list" },
 		["@lsp.type.generic"] = { link = "@variable" },
-		["@lsp.type.interface"] = { fg = palette.blu },
+		["@lsp.type.interface"] = { fg = c.blu },
 		["@lsp.type.keyword"] = { link = "@keyword" },
 		["@lsp.type.lifetime"] = { link = "@keyword.storage" },
 		["@lsp.type.namespace"] = { link = "@module" },
@@ -24,7 +24,7 @@ return function(palette, styles)
 		["@lsp.type.selfTypeKeyword"] = { link = "@variable.builtin" },
 		["@lsp.type.string"] = { link = "@string" },
 		["@lsp.type.typeAlias"] = { link = "@type.definition" },
-		["@lsp.type.unresolvedReference"] = { undercurl = true, sp = palette.err },
+		["@lsp.type.unresolvedReference"] = { undercurl = true, sp = c.red2 },
 		["@lsp.type.variable"] = {}, -- use treesitter styles for regular variables
 		["@lsp.typemod.class.defaultLibrary"] = { link = "@type.builtin" },
 		["@lsp.typemod.enum.defaultLibrary"] = { link = "@type.builtin" },
