@@ -40,7 +40,7 @@ return function(c, _)
 		["@lsp.typemod.type.defaultLibrary"] = { link = "@type.builtin" },
 		["@lsp.typemod.typeAlias.defaultLibrary"] = { link = "@type.builtin" },
 		["@lsp.typemod.variable.callable"] = { link = "@function" },
-		["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
+		["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable" },
 		["@lsp.typemod.variable.injected"] = { link = "@variable" },
 		["@lsp.typemod.variable.static"] = { link = "@constant" },
 	}

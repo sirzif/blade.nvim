@@ -1,17 +1,17 @@
 return function(c, s)
 	return {
 		["@variable"] = { link = "Identifier" },
-		["@variable.builtin"] = { fg = c.mgt3 },
+		["@variable.builtin"] = { fg = c.ylw },
 		["@variable.parameter"] = { fg = c.fg, italic = s.italic },
-		["@variable.parameter.builtin"] = { fg = c.mgt3 },
+		["@variable.parameter.builtin"] = { fg = c.ylw },
 		["@variable.member"] = { fg = c.fg },
 
 		["@constant"] = { link = "Constant" },
-		["@constant.builtin"] = { fg = c.mgt3 },
-		["@constant.macro"] = { fg = c.mgt },
+		["@constant.builtin"] = { link = "Constant" },
+		["@constant.macro"] = { fg = c.red },
 
-		["@module"] = { fg = c.mgt },
-		["@module.builtin"] = { fg = c.mgt3 },
+		["@module"] = { fg = c.red },
+		["@module.builtin"] = { fg = c.ylw },
 		["@label"] = { link = "Label" },
 
 		["@string"] = { link = "String" },
@@ -25,7 +25,7 @@ return function(c, s)
 		["@string.special.url.comment"] = { fg = c.muted, underline = true },
 
 		["@character"] = { link = "Character" },
-		["@character.special"] = { fg = c.ylw },
+		["@character.special"] = { fg = c.ylw2 },
 
 		["@boolean"] = { link = "Boolean" },
 		["@number"] = { link = "Number" },
@@ -33,22 +33,22 @@ return function(c, s)
 		["@float"] = { link = "Float" },
 
 		["@type"] = { link = "Type" },
-		["@type.builtin"] = { link = "Type" },
+		["@type.builtin"] = { fg = c.mgt },
 		["@type.definition"] = { link = "Type" },
 
-		["@attribute"] = { fg = c.mgt2 },
-		["@attribute.builtin"] = { fg = c.mgt3 },
+		["@attribute"] = { fg = c.ylw },
+		["@attribute.builtin"] = { fg = c.mgt2 },
 		["@property"] = { fg = c.fg },
 
 		["@function"] = { link = "Function" },
 		["@function.builtin"] = { link = "Function" },
 		["@function.call"] = { link = "Function" },
-		["@function.macro"] = { fg = c.mgt },
+		["@function.macro"] = { fg = c.red },
 
 		["@function.method"] = { link = "Function" },
 		["@function.method.call"] = { link = "Function" },
 
-		["@constructor"] = { fg = c.vio },
+		["@constructor"] = { fg = c.ylw },
 		["@operator"] = { link = "Operator" },
 
 		["@keyword"] = { link = "Keyword" },
@@ -78,8 +78,8 @@ return function(c, s)
 		["@comment"] = { link = "Comment" },
 		["@comment.documentation"] = { link = "Comment" },
 
-		["@comment.error"] = { fg = c.red2 },
-		["@comment.warning"] = { fg = c.ylw },
+		["@comment.error"] = { fg = c.red },
+		["@comment.warning"] = { fg = c.ylw2 },
 		["@comment.todo"] = { fg = c.grn2, bg = c.grn, blend = 15 },
 		["@comment.note"] = { fg = c.blu2, bg = c.blu, blend = 15 },
 
@@ -99,7 +99,7 @@ return function(c, s)
 		["@markup.link.label"] = { fg = c.grn2 },
 		["@markup.link.url"] = { fg = c.blu2, underline = true },
 
-		["@markup.raw"] = { fg = c.ylw },
+		["@markup.raw"] = { fg = c.ylw2 },
 		["@markup.raw.block"] = { fg = c.fg },
 
 		["@markup.list"] = { fg = c.subtle },
@@ -109,16 +109,16 @@ return function(c, s)
 		-- Markdown headings
 
 		["@markup.heading"] = { fg = c.fg },
-		["@markup.heading.1"] = { fg = c.ylw, bold = true },
+		["@markup.heading.1"] = { fg = c.ylw2, bold = true },
 		["@markup.heading.2"] = { fg = c.blu2, bold = true },
 		["@markup.heading.3"] = { fg = c.blu, bold = true },
-		["@markup.heading.4"] = { fg = c.vio2, bold = true },
+		["@markup.heading.4"] = { fg = c.mgt, bold = true },
 		["@markup.heading.5"] = { fg = c.mgt2, bold = true },
 		["@markup.heading.6"] = { fg = c.grn2, bold = true },
 
 		["@diff.plus"] = { fg = c.grn, bg = c.grn, blend = 20 },
 		["@diff.minus"] = { fg = c.red, bg = c.red, blend = 20 },
-		["@diff.delta"] = { fg = c.ylw, bg = c.ylw, blend = 20 },
+		["@diff.delta"] = { fg = c.ylw2, bg = c.ylw, blend = 20 },
 
 		["@tag"] = { link = "Tag" },
 		["@tag.attribute"] = { fg = c.subtle },

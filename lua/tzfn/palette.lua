@@ -10,23 +10,21 @@ local palette = {
 	subtle = "#959da0",
 	muted = "#555c5f",
 
-	-- ~aa
-	red = "#c35d5b",
-	grn = "#558763",
-	ylw = "#f78b04",
-	blu = "#14889b",
-	mgt = "#cf489e",
-	cyn = "#658191",
-	vio = "#886fbf",
+	-- ~AA
+	red = "#c25a58",
+	grn = "#538661",
+	ylw = "#e0731d",
+	blu = "#118799",
+	mgt = "#866dbe",
+	cyn = "#647e8e",
 
-	-- ~aaa
-	red2 = "#d48a89",
-	grn2 = "#97c8a5",
-	ylw2 = "#fcaa45",
-	blu2 = "#58abb8",
-	mgt2 = "#dd7fbb",
-	cyn2 = "#8ca1ad",
-	vio2 = "#a794d0",
+	-- ~AAA
+	red2 = "#d48a88",
+	grn2 = "#80a58a",
+	ylw2 = "#f78b04",
+	blu2 = "#53a8b6",
+	mgt2 = "#a592cf",
+	cyn2 = "#8ca0ac",
 
 	-- original
 	red3 = "#a30502",
@@ -34,9 +32,8 @@ local palette = {
 	grn3_1 = "#88b783",
 	-- ylw3 = "#f78b04",
 	blu3 = "#027f93",
-	mgt3 = "#c5238a",
+	mgt3 = "#5531a4",
 	cyn3 = "#406074",
-	vio3 = "#5531a4",
 
 	hl1 = "#071c25",
 	hl2 = "#1b3039",
