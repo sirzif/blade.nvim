@@ -1,9 +1,11 @@
-return function(c, s)
+local M = {}
+
+function M.get(c, s)
 	return {
 		["@variable"] = { link = "Identifier" },
-		["@variable.builtin"] = { fg = c.ylw },
+		["@variable.builtin"] = { fg = c.red },
 		["@variable.parameter"] = { fg = c.fg, italic = s.italic },
-		["@variable.parameter.builtin"] = { fg = c.ylw },
+		["@variable.parameter.builtin"] = { fg = c.red },
 		["@variable.member"] = { fg = c.fg },
 
 		["@constant"] = { link = "Constant" },
@@ -11,7 +13,7 @@ return function(c, s)
 		["@constant.macro"] = { fg = c.red },
 
 		["@module"] = { fg = c.red },
-		["@module.builtin"] = { fg = c.ylw },
+		["@module.builtin"] = { fg = c.red },
 		["@label"] = { link = "Label" },
 
 		["@string"] = { link = "String" },
@@ -33,11 +35,11 @@ return function(c, s)
 		["@float"] = { link = "Float" },
 
 		["@type"] = { link = "Type" },
-		["@type.builtin"] = { fg = c.mgt },
+		["@type.builtin"] = { link = "Type" },
 		["@type.definition"] = { link = "Type" },
 
-		["@attribute"] = { fg = c.ylw },
-		["@attribute.builtin"] = { fg = c.mgt2 },
+		["@attribute"] = { fg = c.vio2 },
+		["@attribute.builtin"] = { fg = c.vio },
 		["@property"] = { fg = c.fg },
 
 		["@function"] = { link = "Function" },
@@ -48,14 +50,14 @@ return function(c, s)
 		["@function.method"] = { link = "Function" },
 		["@function.method.call"] = { link = "Function" },
 
-		["@constructor"] = { fg = c.ylw },
+		["@constructor"] = { fg = c.mgt },
 		["@operator"] = { link = "Operator" },
 
 		["@keyword"] = { link = "Keyword" },
 		["@keyword.function"] = { link = "Keyword" },
 		["@keyword.coroutine"] = { link = "Keyword" },
 		["@keyword.operator"] = { link = "Operator" },
-		["@keyword.import"] = { link = "Include" },
+		["@keyword.import"] = { fg = c.cyn },
 		["@keyword.type"] = { link = "Keyword" },
 		["@keyword.modifier"] = { link = "Keyword" },
 		["@keyword.repeat"] = { link = "Repeat" },
@@ -71,7 +73,7 @@ return function(c, s)
 
 		--- Punctuation
 		["@punctuation.delimiter"] = { link = "Delimiter" },
-		["@punctuation.bracket"] = { link = "Delimiter" },
+		["@punctuation.bracket"] = { fg = c.blu },
 		["@punctuation.special"] = { link = "Delimiter" },
 
 		--- Comments
@@ -80,8 +82,8 @@ return function(c, s)
 
 		["@comment.error"] = { fg = c.red },
 		["@comment.warning"] = { fg = c.ylw2 },
-		["@comment.todo"] = { fg = c.grn2, bg = c.grn, blend = 15 },
-		["@comment.note"] = { fg = c.blu2, bg = c.blu, blend = 15 },
+		["@comment.todo"] = { fg = c.vio, bg = c.vio, blend = 20 },
+		["@comment.note"] = { fg = c.cyn2, bg = c.cyn2, blend = 20 },
 
 		--- Markup
 		["@markup.strong"] = { bold = true },
@@ -90,31 +92,31 @@ return function(c, s)
 		["@markup.underline"] = { underline = true },
 
 		["@markup.quote"] = { fg = c.fg },
-		["@markup.math"] = { fg = c.blu2 },
+		["@markup.math"] = { fg = c.cyn2 },
 		["@markup.environment"] = { link = "Macro" },
 		["@markup.environment.name"] = { link = "@type" },
 
 		["@markup.link"] = { fg = c.fg, underline = true },
 		["@markup.link.markdown_inline"] = { fg = c.fg, underline = false },
 		["@markup.link.label"] = { fg = c.grn2 },
-		["@markup.link.url"] = { fg = c.blu2, underline = true },
+		["@markup.link.url"] = { fg = c.cyn2, underline = true },
 
 		["@markup.raw"] = { fg = c.ylw2 },
 		["@markup.raw.block"] = { fg = c.fg },
 
 		["@markup.list"] = { fg = c.subtle },
-		["@markup.list.checked"] = { fg = c.grn, bg = c.d_grn, blend = 10 },
+		["@markup.list.checked"] = { fg = c.grn, bg = c.grn2, blend = 10 },
 		["@markup.list.unchecked"] = { fg = c.subtle },
 
 		-- Markdown headings
 
-		["@markup.heading"] = { fg = c.fg },
-		["@markup.heading.1"] = { fg = c.ylw2, bold = true },
-		["@markup.heading.2"] = { fg = c.blu2, bold = true },
-		["@markup.heading.3"] = { fg = c.blu, bold = true },
-		["@markup.heading.4"] = { fg = c.mgt, bold = true },
-		["@markup.heading.5"] = { fg = c.mgt2, bold = true },
-		["@markup.heading.6"] = { fg = c.grn2, bold = true },
+		["@markup.heading"] = { fg = c.vio, bold = true },
+		["@markup.heading.1"] = { link = "@markup.heading" },
+		["@markup.heading.2"] = { link = "@markup.heading" },
+		["@markup.heading.3"] = { link = "@markup.heading" },
+		["@markup.heading.4"] = { link = "@markup.heading" },
+		["@markup.heading.5"] = { link = "@markup.heading" },
+		["@markup.heading.6"] = { link = "@markup.heading" },
 
 		["@diff.plus"] = { fg = c.grn, bg = c.grn, blend = 20 },
 		["@diff.minus"] = { fg = c.red, bg = c.red, blend = 20 },
@@ -133,3 +135,5 @@ return function(c, s)
 		-- ["@nospell"] = {},
 	}
 end
+
+return M

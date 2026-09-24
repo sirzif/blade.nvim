@@ -1,4 +1,6 @@
-return function(c, _)
+local M = {}
+
+function M.get(c, _)
 	return {
 		-- ya idk. maybe later
 		["@lsp.type.boolean"] = { link = "@boolean" },
@@ -45,3 +47,5 @@ return function(c, _)
 		["@lsp.typemod.variable.static"] = { link = "@constant" },
 	}
 end
+
+return M

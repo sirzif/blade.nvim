@@ -1,12 +1,12 @@
 <p align="center">
     <img src="https://media.tenor.com/Vlr5ep-dRXMAAAAM/ryan-gosling-blade-runner2049.gif"/>
-    <h2 align="center">TZFN - Two Zero Four Nine</h2>
+    <h2 align="center">Blade</h2>
 </p>
 
 <p align="center">Blade Runner 2049 inspired theme for Neovim</p>
 
 <p align="center">
-    <img src="https://github.com/sirzif/tzfn.nvim/blob/main/assets/screenshot.png?raw=true"/>
+    <img src="https://github.com/sirzif/blade.nvim/blob/main/assets/screenshot.png?raw=true"/>
 </p>
 
 ## Install
@@ -15,9 +15,9 @@
 
 ```lua
 {
-    "sirzif/tzfn.nvim",
+    "sirzif/blade.nvim",
     config = function()
-        require("tzfn").setup({
+        require("blade").setup({
             enable = {
                 terminal = true,
             },

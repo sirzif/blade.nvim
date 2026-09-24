@@ -1,4 +1,6 @@
-return function(c, s)
+local M = {}
+
+function M.get(c, s)
 	return {
 		CmpItemAbbr = { fg = c.subtle },
 		CmpItemAbbrDeprecated = { fg = c.subtle, strikethrough = true },
@@ -10,6 +12,8 @@ return function(c, s)
 		CmpItemKindInterface = { link = "Type" },
 		CmpItemKindMethod = { link = "Function" },
 		CmpItemKindSnippet = { link = "Conceal" },
-		CmpItemKindVariable = { fg = c.mgt2 },
+		CmpItemKindVariable = { fg = c.vio2 },
 	}
 end
+
+return M

@@ -30,7 +30,7 @@ function util.parse_color(color)
 	color = color:lower()
 
 	if not color:find("#") and color ~= "NONE" then
-		color = require("tzfn.palette")[color] or vim.api.nvim_get_color_by_name(color)
+		color = require("lua.blade.colors")[color] or vim.api.nvim_get_color_by_name(color)
 	end
 
 	color_cache[color] = color

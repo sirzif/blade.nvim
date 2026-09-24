@@ -1,17 +1,20 @@
-return function(c, s)
+local M = {}
+
+function M.get(c, _)
 	return {
 		BlinkCmpDoc = { fg = c.fg, bg = c.surface },
-		BlinkCmpDocSeparator = { fg = c.blu2, bg = c.surface },
+		BlinkCmpDocBorder = { fg = c.mgt, bg = c.surface },
+		BlinkCmpDocSeparator = { fg = c.mgt, bg = c.surface },
 		BlinkCmpGhostText = { fg = c.muted },
 
-		BlinkCmpLabel = { fg = c.fg, bg = "NONE" },
-		BlinkCmpLabelDeprecated = { fg = c.subtle, bg = "NONE", strikethrough = true },
+		BlinkCmpLabel = { fg = c.subtle, bg = "NONE" },
+		BlinkCmpLabelDeprecated = { fg = c.muted, bg = "NONE", strikethrough = true },
 		BlinkCmpLabelMatch = { fg = c.ylw2, bg = "NONE" },
 
 		BlinkCmpMenu = { fg = c.fg, bg = c.surface },
-		BlinkCmpMenuBorder = { fg = c.blu2, bg = c.surface },
+		BlinkCmpMenuBorder = { fg = c.mgt, bg = c.surface },
 		BlinkCmpSignatureHelp = { fg = c.fg, bg = c.surface },
-		BlinkCmpSignatureHelpBorder = { fg = c.blu2, bg = c.surface },
+		BlinkCmpSignatureHelpBorder = { fg = c.mgt, bg = c.surface },
 
 		BlinkCmpKindDefault = { fg = c.subtle, bg = "NONE" },
 
@@ -22,8 +25,8 @@ return function(c, s)
 		BlinkCmpKindEnum = { link = "@lsp.type.enum" },
 		BlinkCmpKindEnumMember = { link = "@lsp.type.enumMember" },
 		BlinkCmpKindEvent = { link = "Special" },
-		-- BlinkCmpKindField = { link = "@variable.member" },
-		BlinkCmpKindField = { fg = c.mgt2 },
+		BlinkCmpKindField = { link = "@variable.member" },
+		-- BlinkCmpKindField = { fg = c.vio2 },
 		BlinkCmpKindFile = { link = "Normal" },
 		BlinkCmpKindFolder = { link = "Directory" },
 		BlinkCmpKindFunction = { link = "Function" },
@@ -32,17 +35,17 @@ return function(c, s)
 		BlinkCmpKindMethod = { link = "Function" },
 		BlinkCmpKindModule = { link = "@module" },
 		BlinkCmpKindOperator = { link = "Operator" },
-		-- BlinkCmpKindProperty = { link = "@property" },
-		BlinkCmpKindProperty = { fg = c.mgt2 },
+		BlinkCmpKindProperty = { link = "@property" },
+		-- BlinkCmpKindProperty = { fg = c.vio2 },
 		BlinkCmpKindReference = { link = "@markup.link" },
 		BlinkCmpKindSnippet = { link = "Conceal" },
 		BlinkCmpKindStruct = { link = "@lsp.type.struct" },
-		BlinkCmpKindText = { link = "@markup" },
+		BlinkCmpKindText = { fg = c.fg },
 		BlinkCmpKindTypeParameter = { link = "@lsp.type.typeParameter" },
 		BlinkCmpKindUnit = { link = "@lsp.type.struct" },
 		BlinkCmpKindValue = { link = "String" },
-		-- BlinkCmpKindVariable = { link = "@variable" },
-		BlinkCmpKindVariable = { fg = c.mgt2 },
+		BlinkCmpKindVariable = { link = "@variable" },
+		-- BlinkCmpKindVariable = { fg = c.vio2 },
 		-- idk
 		-- BlinkCmpKindCodeium = { fg = palette.b_cyn },
 		-- BlinkCmpKindCopilot = { fg = palette.b_cyn },
@@ -50,3 +53,5 @@ return function(c, s)
 		-- BlinkCmpKindTabNine = { fg = palette.b_cyn },
 	}
 end
+
+return M

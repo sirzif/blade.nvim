@@ -1,5 +1,5 @@
-local p = require("tzfn.palette")
-local config = require("tzfn.config")
+local p = require("blade.colors")
+local config = require("blade.config")
 
 local bg_base = p.surface
 if config.options.styles.transparency then
